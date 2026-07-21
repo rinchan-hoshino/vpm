@@ -15,6 +15,8 @@ PACKAGE_URL = (
     "com.the-cattail.afk-motion-patcher-1.0.0.zip"
 )
 PACKAGE_SHA256 = "6af2397ea1e87a899b0b5a690c4754e5f1d85102297299933dd4b76be449cec2"
+LISTING_REPOSITORY_URL = "https://github.com/rinchan-hoshino/vpm"
+OLD_LISTING_REPOSITORY_URL = "https://github.com/k-neco-lab/" + "vpm"
 OLD_VPM_PREFIX = "https://k-neco.com" + "/vpm"
 
 
@@ -30,6 +32,7 @@ def main() -> None:
     assert listing["url"] == LISTING_URL
     assert source["name"] == "THE_cattail VPM"
     assert source["author"]["name"] == "THE_cattail"
+    assert source["infoLink"]["url"] == LISTING_REPOSITORY_URL
     assert listing["name"] == "THE_cattail VPM"
     assert listing["author"] == "THE_cattail"
     assert listing["id"] == "com.the-cattail.vpm"
@@ -56,6 +59,7 @@ def main() -> None:
     assert "rowPackageInfoButton" in html
     assert "@media (max-width: 640px)" in styles
     assert 'fluent-data-grid-row[data-package-id]' in styles
+    assert html.count(LISTING_REPOSITORY_URL) == 2
 
     for path in ROOT.rglob("*"):
         if path.is_file() and ".git" not in path.parts:
@@ -64,6 +68,7 @@ def main() -> None:
             except UnicodeDecodeError:
                 continue
             assert OLD_VPM_PREFIX not in text, f"old VPM URL remains in {path}"
+            assert OLD_LISTING_REPOSITORY_URL not in text, f"old listing repository remains in {path}"
 
     package_path = os.environ.get("VPM_PACKAGE_FILE")
     if package_path:
