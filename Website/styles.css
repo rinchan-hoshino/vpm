@@ -354,3 +354,80 @@ h1 {
 .flex-1 {
   flex: 1;
 }
+
+@media (max-width: 640px) {
+  body {
+    min-width: 0;
+    align-items: flex-start;
+    padding: 2rem 1rem;
+  }
+
+  .content {
+    min-width: 0;
+  }
+
+  #listingInfo {
+    text-align: center;
+  }
+
+  .addToVccBlock {
+    width: 100%;
+    max-width: 100%;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .addToVccBlock .vccUrlField {
+    min-width: 0;
+    max-width: 100%;
+    flex-basis: 100%;
+  }
+
+  .addToVccBlock .ms-2 {
+    margin-left: 0;
+  }
+
+  .searchBlock,
+  .packages {
+    max-width: 100%;
+  }
+
+  .packages {
+    overflow: hidden;
+  }
+
+  #packageGrid {
+    min-width: 0;
+  }
+
+  #packageGrid fluent-data-grid-row[row-type="header"] {
+    display: none;
+  }
+
+  #packageGrid fluent-data-grid-row[data-package-id] {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0.75rem;
+  }
+
+  #packageGrid fluent-data-grid-row[data-package-id] fluent-data-grid-cell {
+    width: 100%;
+    min-width: 0;
+    grid-column: auto !important;
+    overflow-wrap: anywhere;
+  }
+
+  #packageGrid fluent-data-grid-row[data-package-id] .caption1 {
+    white-space: normal;
+  }
+
+  #packageGrid fluent-data-grid-row[data-package-id] fluent-data-grid-cell:nth-child(2) {
+    display: none;
+  }
+
+  #packageGrid fluent-data-grid-row[data-package-id] fluent-data-grid-cell:nth-child(3) {
+    justify-content: flex-start;
+    margin-top: 0.5rem;
+  }
+}

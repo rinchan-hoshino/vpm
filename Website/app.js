@@ -1,32 +1,26 @@
 import { baseLayerLuminance, StandardLuminance } from 'https://unpkg.com/@fluentui/web-components@2.6.1';
 
-const LISTING_URL = "{{ listingInfo.Url }}";
+const LISTING_URL = "https://vpm.k-neco.com/index.json";
 
 const PACKAGES = {
-{{~ for package in packages ~}}
-  "{{ package.Name }}": {
-    name: "{{ package.Name }}",
-    displayName: "{{ if package.DisplayName; package.DisplayName; end; }}",
-    description: "{{ if package.Description; package.Description; end; }}",
-    version: "{{ package.Version }}",
+  "com.the-cattail.afk-motion-patcher": {
+    name: "com.the-cattail.afk-motion-patcher",
+    displayName: "AFK Motion Patcher",
+    description: "Retarget a source VRChat avatar's AFK behavior graph to a target avatar through explicit mappings at NDMF build time.",
+    version: "1.0.0",
     author: {
-      name: "{{ if package.Author.Name; package.Author.Name; end; }}",
-      url: "{{ if package.Author.Url; package.Author.Url; end; }}",
+      name: "K-NECO LAB / THE_cattail",
+      url: "https://k-neco.com/",
     },
     dependencies: {
-      {{~ for dependency in package.Dependencies ~}}
-        "{{ dependency.Name }}": "{{ dependency.Version }}",
-      {{~ end ~}}
+        "com.vrchat.avatars": ">=3.7.0 <3.11.0",
+        "nadena.dev.ndmf": ">=1.11.0 <2.0.0-a",
     },
     keywords: [
-      {{~ for keyword in package.Keywords ~}}
-        "{{ keyword }}",
-      {{~ end ~}}
     ],
-    license: "{{ package.License }}",
-    licensesUrl: "{{ package.LicensesUrl }}",
+    license: "MIT",
+    licensesUrl: "",
   },
-{{~ end ~}}
 };
 
 const setTheme = () => {
