@@ -1,8 +1,8 @@
 {
-  "name": "K-NECO VPM",
-  "author": "猫尾草工作室",
+  "name": "THE_cattail VPM",
+  "author": "THE_cattail",
   "url": "https://vpm.k-neco.com/index.json",
-  "id": "com.k-neco.vpm",
+  "id": "com.the-cattail.vpm",
   "packages": {
     "com.the-cattail.afk-motion-patcher": {
       "versions": {
@@ -18,14 +18,14 @@
           },
           "changelogUrl": "https://github.com/k-neco-lab/afk-motion-patcher/blob/main/CHANGELOG.md",
           "author": {
-            "name": "K-NECO LAB / THE_cattail",
+            "name": "THE_cattail",
             "email": "THE_cattail@k-neco.com",
-            "url": "https://k-neco.com/"
+            "url": "https://github.com/k-neco-lab/afk-motion-patcher"
           },
-          "documentationUrl": "https://k-neco.com/products/afk-motion-patcher",
+          "documentationUrl": "https://github.com/k-neco-lab/afk-motion-patcher#readme",
           "license": "MIT",
           "repo": "https://vpm.k-neco.com/index.json",
-          "zipSHA256": "e800d54e21b3c5f544b9422c8bb8f1e951dd018a504ecb23bf7c6f973facc173",
+          "zipSHA256": "6af2397ea1e87a899b0b5a690c4754e5f1d85102297299933dd4b76be449cec2",
           "url": "https://github.com/k-neco-lab/afk-motion-patcher/releases/download/v1.0.0/com.the-cattail.afk-motion-patcher-1.0.0.zip"
         }
       }

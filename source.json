@@ -1,13 +1,13 @@
 {
-  "name": "K-NECO VPM",
-  "id": "com.k-neco.vpm",
+  "name": "THE_cattail VPM",
+  "id": "com.the-cattail.vpm",
   "url": "https://vpm.k-neco.com/index.json",
   "author": {
     "email": "THE_cattail@k-neco.com",
-    "name": "猫尾草工作室",
-    "url": "https://k-neco.com"
+    "name": "THE_cattail",
+    "url": "https://github.com/k-neco-lab/afk-motion-patcher"
   },
-  "description": "猫尾草工作室的 VRChat Creator Companion 软件源",
+  "description": "VRChat Creator Companion packages by THE_cattail",
   "infoLink": {
     "url": "https://github.com/k-neco-lab/vpm",
     "text": "View on GitHub"

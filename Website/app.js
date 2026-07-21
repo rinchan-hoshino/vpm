@@ -9,8 +9,8 @@ const PACKAGES = {
     description: "Retarget a source VRChat avatar's AFK behavior graph to a target avatar through explicit mappings at NDMF build time.",
     version: "1.0.0",
     author: {
-      name: "K-NECO LAB / THE_cattail",
-      url: "https://k-neco.com/",
+      name: "THE_cattail",
+      url: "https://github.com/k-neco-lab/afk-motion-patcher",
     },
     dependencies: {
         "com.vrchat.avatars": ">=3.7.0 <3.11.0",
