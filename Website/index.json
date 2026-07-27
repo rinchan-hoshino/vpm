@@ -38,9 +38,6 @@
             "Assets/THE_cattail/AfkMotionPatcher": "34b44315f663ca24ea312a0cab54f19d"
           },
           "legacyFiles": {},
-          "legacyPackages": [
-            "com.the-cattail.afk-motion-patcher"
-          ],
           "zipSHA256": "4273ed9cbb51bed83067ef9af7cbbab4699c36960e4f8e68998f606a96f90679"
         },
         "1.0.0": {

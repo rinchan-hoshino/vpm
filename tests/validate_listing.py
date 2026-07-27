@@ -54,6 +54,7 @@ def main() -> None:
         assert package["version"] == version
         assert package["url"] == package_url
         assert package["repo"] == LISTING_URL
+        assert PACKAGE_ID not in package.get("legacyPackages", [])
         assert package["zipSHA256"] == package_sha256
 
     for text in (html, app):
