@@ -1,20 +1,28 @@
 #!/usr/bin/env python3
 import hashlib
+import io
 import json
 import os
 import urllib.request
+import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 WEBSITE = ROOT / "Website"
 LISTING_URL = "https://vpm.k-neco.com/index.json"
 PACKAGE_ID = "com.the-cattail.afk-motion-patcher"
-PACKAGE_VERSION = "1.0.0"
-PACKAGE_URL = (
-    "https://github.com/k-neco-lab/afk-motion-patcher/releases/download/v1.0.0/"
-    "com.the-cattail.afk-motion-patcher-1.0.0.zip"
-)
-PACKAGE_SHA256 = "6af2397ea1e87a899b0b5a690c4754e5f1d85102297299933dd4b76be449cec2"
+EXPECTED_PACKAGES = {
+    "1.0.1": (
+        "https://github.com/k-neco-lab/afk-motion-patcher/releases/download/v1.0.1/"
+        "com.the-cattail.afk-motion-patcher-1.0.1.zip",
+        "4273ed9cbb51bed83067ef9af7cbbab4699c36960e4f8e68998f606a96f90679",
+    ),
+    "1.0.0": (
+        "https://github.com/k-neco-lab/afk-motion-patcher/releases/download/v1.0.0/"
+        "com.the-cattail.afk-motion-patcher-1.0.0.zip",
+        "6af2397ea1e87a899b0b5a690c4754e5f1d85102297299933dd4b76be449cec2",
+    ),
+}
 LISTING_REPOSITORY_URL = "https://github.com/rinchan-hoshino/vpm"
 OLD_LISTING_REPOSITORY_URL = "https://github.com/k-neco-lab/" + "vpm"
 OLD_VPM_PREFIX = "https://k-neco.com" + "/vpm"
@@ -38,11 +46,15 @@ def main() -> None:
     assert listing["id"] == "com.the-cattail.vpm"
     assert set(listing["packages"]) == {PACKAGE_ID}
 
-    version = listing["packages"][PACKAGE_ID]["versions"][PACKAGE_VERSION]
-    assert version["author"]["name"] == "THE_cattail"
-    assert version["url"] == PACKAGE_URL
-    assert version["repo"] == LISTING_URL
-    assert version["zipSHA256"] == PACKAGE_SHA256
+    versions = listing["packages"][PACKAGE_ID]["versions"]
+    assert set(versions) == set(EXPECTED_PACKAGES)
+    for version, (package_url, package_sha256) in EXPECTED_PACKAGES.items():
+        package = versions[version]
+        assert package["author"]["name"] == "THE_cattail"
+        assert package["version"] == version
+        assert package["url"] == package_url
+        assert package["repo"] == LISTING_URL
+        assert package["zipSHA256"] == package_sha256
 
     for text in (html, app):
         assert LISTING_URL in text
@@ -71,12 +83,29 @@ def main() -> None:
             assert OLD_LISTING_REPOSITORY_URL not in text, f"old listing repository remains in {path}"
 
     package_path = os.environ.get("VPM_PACKAGE_FILE")
-    if package_path:
-        package_bytes = Path(package_path).read_bytes()
-    else:
-        with urllib.request.urlopen(PACKAGE_URL, timeout=30) as response:
-            package_bytes = response.read()
-    assert hashlib.sha256(package_bytes).hexdigest() == PACKAGE_SHA256
+    for version, (package_url, package_sha256) in EXPECTED_PACKAGES.items():
+        if package_path and version == "1.0.1":
+            package_bytes = Path(package_path).read_bytes()
+        else:
+            with urllib.request.urlopen(package_url, timeout=30) as response:
+                package_bytes = response.read()
+        assert hashlib.sha256(package_bytes).hexdigest() == package_sha256
+        with zipfile.ZipFile(io.BytesIO(package_bytes)) as archive:
+            package_manifest = json.loads(archive.read("package.json"))
+        listing_manifest = dict(versions[version])
+        assert listing_manifest.pop("zipSHA256") == package_sha256
+        listing_overrides = {
+            "description",
+            "keywords",
+            "legacyFiles",
+            "legacyFolders",
+            "legacyPackages",
+            "licensesUrl",
+        }
+        for key, value in package_manifest.items():
+            if key not in listing_overrides:
+                assert listing_manifest[key] == value
+        assert set(listing_manifest) - set(package_manifest) <= listing_overrides
 
     print("VPM listing validation passed")
 

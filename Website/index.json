@@ -6,6 +6,43 @@
   "packages": {
     "com.the-cattail.afk-motion-patcher": {
       "versions": {
+        "1.0.1": {
+          "name": "com.the-cattail.afk-motion-patcher",
+          "displayName": "AFK Motion Patcher",
+          "version": "1.0.1",
+          "unity": "2022.3",
+          "description": "Patch an existing AFK layer with model-specific retargeting at avatar build time.",
+          "author": {
+            "name": "THE_cattail",
+            "email": "THE_cattail@k-neco.com",
+            "url": "https://github.com/k-neco-lab/afk-motion-patcher"
+          },
+          "url": "https://github.com/k-neco-lab/afk-motion-patcher/releases/download/v1.0.1/com.the-cattail.afk-motion-patcher-1.0.1.zip",
+          "repo": "https://vpm.k-neco.com/index.json",
+          "license": "MIT",
+          "licensesUrl": "https://github.com/k-neco-lab/afk-motion-patcher/blob/main/LICENSE",
+          "changelogUrl": "https://github.com/k-neco-lab/afk-motion-patcher/blob/main/CHANGELOG.md",
+          "documentationUrl": "https://github.com/k-neco-lab/afk-motion-patcher#readme",
+          "keywords": [
+            "vrchat",
+            "ndmf",
+            "afk",
+            "animation",
+            "retargeting"
+          ],
+          "vpmDependencies": {
+            "com.vrchat.avatars": ">=3.7.0 <3.11.0",
+            "nadena.dev.ndmf": ">=1.11.0 <2.0.0-a"
+          },
+          "legacyFolders": {
+            "Assets/THE_cattail/AfkMotionPatcher": "34b44315f663ca24ea312a0cab54f19d"
+          },
+          "legacyFiles": {},
+          "legacyPackages": [
+            "com.the-cattail.afk-motion-patcher"
+          ],
+          "zipSHA256": "4273ed9cbb51bed83067ef9af7cbbab4699c36960e4f8e68998f606a96f90679"
+        },
         "1.0.0": {
           "name": "com.the-cattail.afk-motion-patcher",
           "displayName": "AFK Motion Patcher",
