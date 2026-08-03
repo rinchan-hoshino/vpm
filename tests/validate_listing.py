@@ -12,15 +12,10 @@ WEBSITE = ROOT / "Website"
 LISTING_URL = "https://vpm.k-neco.com/index.json"
 PACKAGE_ID = "com.the-cattail.afk-motion-patcher"
 EXPECTED_PACKAGES = {
-    "1.0.1": (
-        "https://github.com/k-neco-lab/afk-motion-patcher/releases/download/v1.0.1/"
-        "com.the-cattail.afk-motion-patcher-1.0.1.zip",
-        "4273ed9cbb51bed83067ef9af7cbbab4699c36960e4f8e68998f606a96f90679",
-    ),
     "1.0.0": (
         "https://github.com/k-neco-lab/afk-motion-patcher/releases/download/v1.0.0/"
         "com.the-cattail.afk-motion-patcher-1.0.0.zip",
-        "6af2397ea1e87a899b0b5a690c4754e5f1d85102297299933dd4b76be449cec2",
+        "998dd560158febedd7e27736dc7359cca6f3efd1950bb0f6edb062f003504c17",
     ),
 }
 LISTING_REPOSITORY_URL = "https://github.com/rinchan-hoshino/vpm"
@@ -85,7 +80,7 @@ def main() -> None:
 
     package_path = os.environ.get("VPM_PACKAGE_FILE")
     for version, (package_url, package_sha256) in EXPECTED_PACKAGES.items():
-        if package_path and version == "1.0.1":
+        if package_path:
             package_bytes = Path(package_path).read_bytes()
         else:
             with urllib.request.urlopen(package_url, timeout=30) as response:

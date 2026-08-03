@@ -6,23 +6,27 @@
   "packages": {
     "com.the-cattail.afk-motion-patcher": {
       "versions": {
-        "1.0.1": {
+        "1.0.0": {
           "name": "com.the-cattail.afk-motion-patcher",
           "displayName": "AFK Motion Patcher",
-          "version": "1.0.1",
+          "version": "1.0.0",
           "unity": "2022.3",
-          "description": "Patch an existing AFK layer with model-specific retargeting at avatar build time.",
+          "description": "Retarget a source VRChat avatar's AFK behavior graph to a target avatar through explicit mappings at NDMF build time.",
           "author": {
             "name": "THE_cattail",
             "email": "THE_cattail@k-neco.com",
             "url": "https://github.com/k-neco-lab/afk-motion-patcher"
           },
-          "url": "https://github.com/k-neco-lab/afk-motion-patcher/releases/download/v1.0.1/com.the-cattail.afk-motion-patcher-1.0.1.zip",
+          "url": "https://github.com/k-neco-lab/afk-motion-patcher/releases/download/v1.0.0/com.the-cattail.afk-motion-patcher-1.0.0.zip",
           "repo": "https://vpm.k-neco.com/index.json",
-          "license": "MIT",
-          "licensesUrl": "https://github.com/k-neco-lab/afk-motion-patcher/blob/main/LICENSE",
-          "changelogUrl": "https://github.com/k-neco-lab/afk-motion-patcher/blob/main/CHANGELOG.md",
           "documentationUrl": "https://github.com/k-neco-lab/afk-motion-patcher#readme",
+          "changelogUrl": "https://github.com/k-neco-lab/afk-motion-patcher/blob/main/CHANGELOG.md",
+          "license": "MIT",
+          "vpmDependencies": {
+            "com.vrchat.avatars": ">=3.7.0 <3.11.0",
+            "nadena.dev.ndmf": ">=1.11.0 <2.0.0-a"
+          },
+          "licensesUrl": "https://github.com/k-neco-lab/afk-motion-patcher/blob/main/LICENSE",
           "keywords": [
             "vrchat",
             "ndmf",
@@ -30,39 +34,14 @@
             "animation",
             "retargeting"
           ],
-          "vpmDependencies": {
-            "com.vrchat.avatars": ">=3.7.0 <3.11.0",
-            "nadena.dev.ndmf": ">=1.11.0 <2.0.0-a"
-          },
           "legacyFolders": {
             "Assets/THE_cattail/AfkMotionPatcher": "34b44315f663ca24ea312a0cab54f19d"
           },
           "legacyFiles": {},
-          "zipSHA256": "4273ed9cbb51bed83067ef9af7cbbab4699c36960e4f8e68998f606a96f90679"
-        },
-        "1.0.0": {
-          "name": "com.the-cattail.afk-motion-patcher",
-          "displayName": "AFK Motion Patcher",
-          "version": "1.0.0",
-          "unity": "2022.3",
-          "description": "Retarget a source VRChat avatar's AFK behavior graph to a target avatar through explicit mappings at NDMF build time.",
-          "vpmDependencies": {
-            "com.vrchat.avatars": ">=3.7.0 <3.11.0",
-            "nadena.dev.ndmf": ">=1.11.0 <2.0.0-a"
-          },
-          "changelogUrl": "https://github.com/k-neco-lab/afk-motion-patcher/blob/main/CHANGELOG.md",
-          "author": {
-            "name": "THE_cattail",
-            "email": "THE_cattail@k-neco.com",
-            "url": "https://github.com/k-neco-lab/afk-motion-patcher"
-          },
-          "documentationUrl": "https://github.com/k-neco-lab/afk-motion-patcher#readme",
-          "license": "MIT",
-          "repo": "https://vpm.k-neco.com/index.json",
-          "zipSHA256": "6af2397ea1e87a899b0b5a690c4754e5f1d85102297299933dd4b76be449cec2",
-          "url": "https://github.com/k-neco-lab/afk-motion-patcher/releases/download/v1.0.0/com.the-cattail.afk-motion-patcher-1.0.0.zip"
+          "zipSHA256": "998dd560158febedd7e27736dc7359cca6f3efd1950bb0f6edb062f003504c17"
         }
       }
     }
-  }
+  },
+  "headers": {}
 }
