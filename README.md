@@ -1,4 +1,4 @@
-# THE_cattail VPM
+# THE_cattail
 
 VRChat Creator Companion packages by THE_cattail.
 

@@ -21,6 +21,7 @@ EXPECTED_PACKAGES = {
 LISTING_REPOSITORY_URL = "https://github.com/rinchan-hoshino/vpm"
 OLD_LISTING_REPOSITORY_URL = "https://github.com/k-neco-lab/" + "vpm"
 OLD_VPM_PREFIX = "https://k-neco.com" + "/vpm"
+OLD_LISTING_NAME = "THE_cattail " + "VPM"
 
 
 def main() -> None:
@@ -33,10 +34,10 @@ def main() -> None:
     assert (WEBSITE / "CNAME").read_text().strip() == "vpm.k-neco.com"
     assert source["url"] == LISTING_URL
     assert listing["url"] == LISTING_URL
-    assert source["name"] == "THE_cattail VPM"
+    assert source["name"] == "THE_cattail"
     assert source["author"]["name"] == "THE_cattail"
     assert source["infoLink"]["url"] == LISTING_REPOSITORY_URL
-    assert listing["name"] == "THE_cattail VPM"
+    assert listing["name"] == "THE_cattail"
     assert listing["author"] == "THE_cattail"
     assert listing["id"] == "com.the-cattail.vpm"
     assert set(listing["packages"]) == {PACKAGE_ID}
@@ -77,6 +78,7 @@ def main() -> None:
                 continue
             assert OLD_VPM_PREFIX not in text, f"old VPM URL remains in {path}"
             assert OLD_LISTING_REPOSITORY_URL not in text, f"old listing repository remains in {path}"
+            assert OLD_LISTING_NAME not in text, f"old listing name remains in {path}"
 
     package_path = os.environ.get("VPM_PACKAGE_FILE")
     for version, (package_url, package_sha256) in EXPECTED_PACKAGES.items():
