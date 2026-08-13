@@ -15,7 +15,7 @@ EXPECTED_PACKAGES = {
     "1.0.0": (
         "https://github.com/k-neco-lab/afk-motion-patcher/releases/download/v1.0.0/"
         "com.the-cattail.afk-motion-patcher-1.0.0.zip",
-        "998dd560158febedd7e27736dc7359cca6f3efd1950bb0f6edb062f003504c17",
+        "8e74f0fb17ce3715c8817f686d1514e32418fa6c790ae14042af2813b93f73fc",
     ),
 }
 LISTING_REPOSITORY_URL = "https://github.com/rinchan-hoshino/vpm"
