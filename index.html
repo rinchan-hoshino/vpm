@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>THE_cattail VPM — VRChat Package Repository</title>
+  <meta name="description" content="Official VPM repository for general-purpose VRChat editor tools by THE_cattail (vpm.k-neco.com).">
+  <link rel="icon" href="./favicon.ico">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a href="./" class="brand" aria-label="THE_cattail VPM Home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z"/>
+            <path d="M12 12l8-4.5"/>
+            <path d="M12 12v9"/>
+            <path d="M12 12L4 7.5"/>
+          </svg>
+        </span>
+        <span class="brand-text">
+          <span class="brand-name">THE_cattail</span>
+          <span class="brand-domain">vpm.k-neco.com</span>
+        </span>
+      </a>
+
+      <div class="topbar-actions">
+        <div class="lang-switch" role="group" aria-label="Language switcher">
+          <button type="button" class="lang-btn" data-lang="ja">日本語</button>
+          <button type="button" class="lang-btn" data-lang="en">English</button>
+          <button type="button" class="lang-btn" data-lang="zh">简体中文</button>
+        </div>
+        <a
+          class="icon-link"
+          href="https://github.com/rinchan-hoshino/vpm"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="GitHub Repository"
+          title="GitHub"
+        >
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container main-content">
+    <section class="hero">
+      <p class="hero-label" data-i18n="heroBadge">VRChat Creator Companion · VPM Repository</p>
+      <h1 class="hero-title" data-i18n="heroTitle">THE_cattail VPM</h1>
+      <p class="hero-subtitle" data-i18n="heroSubtitle">
+        VRChat向け汎用エディターツールを配信する公式VPMリポジトリです。
+      </p>
+
+      <div class="repo-card">
+        <div class="repo-actions">
+          <a
+            id="vccAddRepoButton"
+            class="btn btn-primary"
+            href="vcc://vpm/addRepo?url=https%3A%2F%2Fvpm.k-neco.com%2Findex.json"
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 5v14"/>
+              <path d="M5 12h14"/>
+            </svg>
+            <span data-i18n="addToVcc">Add to VCC</span>
+          </a>
+
+          <div class="url-copy-group">
+            <input
+              id="vccUrlField"
+              class="url-input"
+              type="text"
+              readonly
+              value="https://vpm.k-neco.com/index.json"
+              aria-label="VPM Repository URL"
+            >
+            <button id="vccUrlFieldCopy" type="button" class="btn btn-secondary">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+              </svg>
+              <span id="copyBtnLabel" data-i18n="copyUrl">URLをコピー</span>
+            </button>
+          </div>
+        </div>
+        <p class="repo-hint" data-i18n="repoHint">
+          VRChat Creator Companion (VCC) および ALCOM に対応しています。
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <span class="section-num">01</span>
+        <h2 class="section-title" data-i18n="packagesHeading">収録パッケージ</h2>
+        <span id="packageCount" class="count-label" hidden></span>
+      </div>
+
+      <div id="packageList" class="package-list" aria-live="polite">
+        <div class="state-card" id="loadingState" data-i18n="loadingPackages">パッケージ一覧を読み込み中...</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <span class="section-num">02</span>
+        <h2 class="section-title" data-i18n="guideHeading">導入手順</h2>
+      </div>
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-num">01</div>
+          <h3 class="step-title" data-i18n="step1Title">リポジトリを追加</h3>
+          <p class="step-desc" data-i18n="step1Desc">
+            「Add to VCC」をクリックするか、URLをコピーして VCC / ALCOM に登録します。
+          </p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">02</div>
+          <h3 class="step-title" data-i18n="step2Title">追加を承認</h3>
+          <p class="step-desc" data-i18n="step2Desc">
+            VCCの確認ダイアログでリポジトリ情報を確認し、「I Understand」をクリックします。
+          </p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">03</div>
+          <h3 class="step-title" data-i18n="step3Title">プロジェクトへ導入</h3>
+          <p class="step-desc" data-i18n="step3Desc">
+            対象プロジェクトの「Manage Project」から必要なツールを追加して完了です。
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>THE_cattail · vpm.k-neco.com</span>
+      <div class="footer-links">
+        <a href="https://github.com/rinchan-hoshino/vpm" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://the-cattail.booth.pm/items/8783972" target="_blank" rel="noopener noreferrer">BOOTH</a>
+        <a href="./index.json" target="_blank" rel="noopener noreferrer">index.json</a>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>

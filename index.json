@@ -1,0 +1,35 @@
+{
+  "name": "THE_cattail",
+  "author": "THE_cattail",
+  "url": "https://vpm.k-neco.com/index.json",
+  "id": "com.the-cattail.vpm",
+  "packages": {
+    "com.the-cattail.afk-motion-patcher": {
+      "versions": {
+        "2.0.1": {
+          "name": "com.the-cattail.afk-motion-patcher",
+          "displayName": "AFK Motion Patcher",
+          "version": "2.0.1",
+          "unity": "2022.3",
+          "description": "Non-destructive NDMF editor tool for retargeting a source VRChat avatar's AFK motion to any target avatar while preserving existing Action layers (GoGoLoco, dances, poses), with smart Auto-Match, Rest-Pose Delta, Humanoid contact & pose tuning, intuitive pose sliders, and live Source/Result preview.",
+          "author": {
+            "name": "THE_cattail",
+            "email": "THE_cattail@k-neco.com",
+            "url": "https://github.com/rinchan-hoshino/afk-motion-patcher"
+          },
+          "url": "https://github.com/rinchan-hoshino/afk-motion-patcher/releases/download/v2.0.1/com.the-cattail.afk-motion-patcher-2.0.1.zip",
+          "repo": "https://vpm.k-neco.com/index.json",
+          "documentationUrl": "https://github.com/rinchan-hoshino/afk-motion-patcher#readme",
+          "changelogUrl": "https://github.com/rinchan-hoshino/afk-motion-patcher/blob/main/CHANGELOG.md",
+          "license": "MIT",
+          "vpmDependencies": {
+            "com.vrchat.avatars": ">=3.7.0 <3.11.0",
+            "nadena.dev.ndmf": ">=1.11.0 <2.0.0-a"
+          },
+          "zipSHA256": "c4533f36b7c4c4c20af7f92c9db932e7bd405da2efa0851034297e9ac962a1c0"
+        }
+      }
+    }
+  },
+  "headers": {}
+}
