@@ -5,7 +5,7 @@
   "author": {
     "email": "THE_cattail@k-neco.com",
     "name": "THE_cattail",
-    "url": "https://github.com/k-neco-lab/afk-motion-patcher"
+    "url": "https://github.com/rinchan-hoshino/afk-motion-patcher"
   },
   "description": "VRChat Creator Companion packages by THE_cattail",
   "infoLink": {
@@ -13,6 +13,6 @@
     "text": "View on GitHub"
   },
   "githubRepos": [
-    "k-neco-lab/afk-motion-patcher"
+    "rinchan-hoshino/afk-motion-patcher"
   ]
 }
