@@ -198,9 +198,9 @@ function renderPackages() {
 
     const titleRow = createEl("div", "package-title-row");
     titleRow.appendChild(createEl("h3", "package-name", latest.displayName || pkgId));
-    titleRow.appendChild(createEl("span", "version-pill", `v${latest.version}`));
+    titleRow.appendChild(createEl("span", "version-label", `v${latest.version}`));
     if (latest.license) {
-      titleRow.appendChild(createEl("span", "license-pill", latest.license));
+      titleRow.appendChild(createEl("span", "license-label", latest.license));
     }
     titleWrap.appendChild(titleRow);
     titleWrap.appendChild(createEl("div", "package-id", pkgId));
@@ -209,7 +209,7 @@ function renderPackages() {
     if (Array.isArray(latest.keywords) && latest.keywords.length > 0) {
       const kwRow = createEl("div", "keywords-row");
       for (const kw of latest.keywords) {
-        kwRow.appendChild(createEl("span", "keyword-tag", `#${kw}`));
+        kwRow.appendChild(createEl("span", "keyword-tag", kw));
       }
       head.appendChild(kwRow);
     }
