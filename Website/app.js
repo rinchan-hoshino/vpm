@@ -29,7 +29,7 @@ const I18N = {
     btnDownload: ".zip をダウンロード",
     pkgDescOverride: {
       "com.the-cattail.afk-motion-patcher":
-        "元のアバターのAFK挙動グラフを、NDMFビルド時の明示的なマッピングにより別アバターへリターゲットするVRChat向けエディターツールです。",
+        "GoGoLoco や既存ダンスを壊さず、別アバターの AFK モーション（導入・待機・復帰）を非破壊で移植・微調整できる NDMF エディター拡張です。",
     },
   },
   en: {
@@ -57,7 +57,7 @@ const I18N = {
     btnDownload: "Download .zip",
     pkgDescOverride: {
       "com.the-cattail.afk-motion-patcher":
-        "Retarget a source VRChat avatar's AFK behavior graph to a target avatar through explicit mappings at NDMF build time.",
+        "Port another VRChat avatar's AFK pose (Intro / Loop / Outro) onto your avatar non-destructively via NDMF without breaking GoGoLoco or existing Action layers.",
     },
   },
   zh: {
@@ -85,7 +85,7 @@ const I18N = {
     btnDownload: "下载 .zip",
     pkgDescOverride: {
       "com.the-cattail.afk-motion-patcher":
-        "在 NDMF 构建阶段通过显式映射，将源 VRChat 虚拟形象的 AFK 行为图无损重定向至目标虚拟形象。",
+        "在不破坏原有 GoGoLoco 与自定义动作的前提下，将其他 VRChat 模型的整套 AFK 待机动作非破坏移植到当前模型，并提供耳尾、宽袖防穿模与实时对比预览调校。",
     },
   },
 };

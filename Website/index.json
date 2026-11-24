@@ -11,7 +11,7 @@
           "displayName": "AFK Motion Patcher",
           "version": "2.0.1",
           "unity": "2022.3",
-          "description": "Non-destructive NDMF editor tool for retargeting a source VRChat avatar's AFK motion to any target avatar while preserving existing Action layers (GoGoLoco, dances, poses), with smart Auto-Match, Rest-Pose Delta, Humanoid contact & pose tuning, intuitive pose sliders, and live Source/Result preview.",
+          "description": "Port another VRChat avatar's AFK pose (Intro / Loop / Outro) onto your avatar non-destructively via NDMF without breaking GoGoLoco or existing Action layers.",
           "author": {
             "name": "THE_cattail",
             "email": "THE_cattail@k-neco.com",
