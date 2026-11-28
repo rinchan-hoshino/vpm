@@ -6,10 +6,10 @@
   "packages": {
     "com.the-cattail.afk-motion-patcher": {
       "versions": {
-        "2.0.2": {
+        "2.0.3": {
           "name": "com.the-cattail.afk-motion-patcher",
           "displayName": "AFK Motion Patcher",
-          "version": "2.0.2",
+          "version": "2.0.3",
           "unity": "2022.3",
           "description": "Port another VRChat avatar's AFK pose (Intro / Loop / Outro) onto your avatar non-destructively via NDMF without breaking GoGoLoco or existing Action layers.",
           "author": {
@@ -17,7 +17,7 @@
             "email": "THE_cattail@k-neco.com",
             "url": "https://github.com/rinchan-hoshino/afk-motion-patcher"
           },
-          "url": "https://github.com/rinchan-hoshino/afk-motion-patcher/releases/download/v2.0.2/com.the-cattail.afk-motion-patcher-2.0.2.zip",
+          "url": "https://github.com/rinchan-hoshino/afk-motion-patcher/releases/download/v2.0.3/com.the-cattail.afk-motion-patcher-2.0.3.zip",
           "repo": "https://vpm.k-neco.com/index.json",
           "documentationUrl": "https://github.com/rinchan-hoshino/afk-motion-patcher#readme",
           "changelogUrl": "https://github.com/rinchan-hoshino/afk-motion-patcher/blob/main/CHANGELOG.md",
@@ -26,7 +26,7 @@
             "com.vrchat.avatars": ">=3.7.0 <3.11.0",
             "nadena.dev.ndmf": ">=1.11.0 <2.0.0-a"
           },
-          "zipSHA256": "701d9724e571bce9314298d639cd5c39659e9bb2352a5c69cc9794f1c89a6445"
+          "zipSHA256": "c9adada5c9ff6a265419635a248f50c2ce096d4fddb4202c7b28c13ae4640012"
         }
       }
     }
