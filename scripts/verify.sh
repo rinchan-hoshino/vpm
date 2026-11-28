@@ -23,7 +23,7 @@ pkgs = listing.get("packages", {})
 assert set(pkgs.keys()) == {"com.the-cattail.afk-motion-patcher"}, f"Unexpected packages: {list(pkgs.keys())}"
 
 versions = pkgs["com.the-cattail.afk-motion-patcher"]["versions"]
-assert list(versions.keys()) == ["2.0.1"], f"Expected only 2.0.1, got: {list(versions.keys())}"
+assert list(versions.keys()) == ["2.0.2"], f"Expected only 2.0.2, got: {list(versions.keys())}"
 for v in versions:
     assert not v.startswith("1."), f"Forbidden 1.x version found: {v}"
 
@@ -37,5 +37,5 @@ for lang in ("ja", "en", "zh"):
     assert f'data-lang="{lang}"' in html, f"Missing data-lang={lang} in index.html"
     assert f"{lang}:" in app or f'"{lang}"' in app, f"Missing {lang} translations in app.js"
 
-print("[verify] Website/index.json and trilingual copy OK (2.0.1 only).")
+print("[verify] Website/index.json and trilingual copy OK (2.0.2 only).")
 PY
